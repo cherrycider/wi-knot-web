@@ -162,7 +162,7 @@
 
 
 
-    <div id="how_it_works"> <h1>wi.knot - how it works</h1> </div>
+    <div id="how_it_works"> <h1>wi.knot - how it works?</h1> </div>
 
     <div>
       <img src="../images/logo_tilted_wite_text_original.png" height="15%" width="" align="center"> 

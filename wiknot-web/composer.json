@@ -8,5 +8,7 @@
             "email": "korniychuk@i.ua"
         }
     ],
-    "require": {}
+    "require": {
+        "csanquer/pdo-service-provider": "~1.1dev"
+    }
 }
