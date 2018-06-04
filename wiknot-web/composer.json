@@ -1,0 +1,12 @@
+{
+    "name": "cherrycider/wiknot-web",
+    "description": "wi-knot chat",
+    "type": "project",
+    "authors": [
+        {
+            "name": "cherrycider",
+            "email": "korniychuk@i.ua"
+        }
+    ],
+    "require": {}
+}
