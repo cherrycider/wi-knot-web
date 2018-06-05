@@ -24,9 +24,12 @@ $app->register(new Csanquer\Silex\PdoServiceProvider\Provider\PDOServiceProvider
 $db = pg_connect ("
 			host=$dbopts["host"] 
 			port=$dbopts["port"] 
-			dbname=ltrim($dbopts["path"] 
+			dbname=ltrim($dbopts["path"] ,'/')
 			user=$dbopts["user"] 
 			password=$dbopts["pass"]
 		");
+
+//most simple line:
+//$db = pg_connect (getenv("DATABASE_URL"));
 
 ?>
