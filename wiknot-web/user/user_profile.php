@@ -22,12 +22,23 @@
     if (isset($_SESSION['userID'])) {$userID = $_SESSION['userID'];}
     if (isset($_POST['userID'])) {$userID = $_POST['userID']; $_SESSION['userID']= $_POST['userID']; }
     $query = "SELECT * FROM people WHERE userID='$userID'";
-    $result = mysqli_query($db, $query);
+
+
+   //mysql:
+    //$result = mysqli_query($db, $query);
+    
+    //pg:
+    $result = pg_query($db, $query);
+
     // проверяем удачно ли соединились с базой 
     if (!$result) {die("sorry, something went wrong on the website, database query failed");}
  
-    //извлекаем из базы все данные о пользователе с введенным логином
-    $myrow = mysqli_fetch_array($result);
+    //mysql: извлекаем из базы все данные о пользователе с введенным логином
+    //$myrow = mysqli_fetch_array($result);
+
+    //pg: извлекаем из базы все данные о пользователе с введенным логином
+    $myrow = pg_fetch_array($result);
+
     
     //используем значения для отображения на сайте, например  в тегах php -  echo $myrow['name'] 
 	

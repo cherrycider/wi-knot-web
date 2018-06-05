@@ -117,9 +117,20 @@
     // после регистрации с компьютера userID становится таким же как его email
     // проверяем уникальность userID 
     $userID = $email;
-    $result = mysqli_query($db, "SELECT id FROM people WHERE userID='$userID'");
 
-    $myrow = mysqli_fetch_array($result);
+
+    //mysql:
+    //$result = mysqli_query($db, "SELECT id FROM people WHERE userID='$userID'");
+    //pg:
+    $result = pg_query($db, "SELECT id FROM people WHERE userID='$userID'");
+
+
+    //mysql:
+    //$myrow = mysqli_fetch_array($result);
+    //pg:
+    $myrow = pg_fetch_array($result);
+
+
     if (!empty($myrow['id'])) {
     
     exit ("<div><br><br>
@@ -133,8 +144,12 @@
     }
     // если такого нет, то сохраняем данные
     $query = "INSERT INTO people (userID, email, name, password) VALUES('{$userID}', '{$email}', '{$name}','{$password}')";
-    $result2 = mysqli_query ($db, $query);
-    
+
+    //mysql:
+    //$result2 = mysqli_query ($db, $query);
+    //pg:
+    $result2 = pg_query ($db, $query);
+
     // Проверяем, есть ли ошибки
     if ($result2=='TRUE')
     {
