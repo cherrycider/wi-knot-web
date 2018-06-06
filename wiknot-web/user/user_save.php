@@ -187,7 +187,7 @@
     else {
 	
     // pg:
-    $pg_last_error=pg_last_error();
+    echo pg_last_error();
 
     echo "there is some error on the website, {$name}, you cannot register now. {$pg_last_error}";
     }
