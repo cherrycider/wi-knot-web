@@ -154,7 +154,7 @@
 
 
     // Проверяем, есть ли ошибки
-    if ($result2=='TRUE')
+    if ($result2<>'FALSE')
     {
     echo "<br><br>
           WELCOME !
@@ -186,10 +186,7 @@
     }
     else {
 	
-    // pg:
-    echo pg_last_error();
-
-    echo "there is some error on the website, {$name}, you cannot register now. {$pg_last_error}";
+    echo "there is some error on the website, {$name}, you cannot register now.";
     }
     ?>
 
