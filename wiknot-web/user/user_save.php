@@ -150,6 +150,9 @@
     //pg:
     $result2 = pg_query ($db, $query);
 
+
+
+
     // Проверяем, есть ли ошибки
     if ($result2=='TRUE')
     {
@@ -182,7 +185,11 @@
 
     }
     else {
-    echo "there is some error on the website, {$name}, you cannot register now.";
+	
+    // pg:
+    $pg_last_error=pg_last_error();
+
+    echo "there is some error on the website, {$name}, you cannot register now. {$pg_last_error}";
     }
     ?>
 
