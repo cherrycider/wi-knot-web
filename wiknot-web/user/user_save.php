@@ -154,7 +154,14 @@
 
 
     // Проверяем, есть ли ошибки
+
+    //mysql:
+    //if ($result2=='TRUE')
+
+    //pg:
     if ($result2<>'FALSE')
+
+
     {
     echo "<br><br>
           WELCOME !
