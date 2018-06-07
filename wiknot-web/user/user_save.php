@@ -112,17 +112,17 @@
     include ("../db_connection.php");
     // файл db_connection.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь 
     // проверка на существование пользователя с таким же email/паролем
-    // уникальный userID состоит из комбинации email пароль, его будем проверять
+    // уникальный userid состоит из комбинации email пароль, его будем проверять
 
-    // после регистрации с компьютера userID становится таким же как его email
-    // проверяем уникальность userID 
-    $userID = $email;
+    // после регистрации с компьютера userid становится таким же как его email
+    // проверяем уникальность userid 
+    $userid = $email;
 
 
     //mysql:
-    //$result = mysqli_query($db, "SELECT id FROM people WHERE userID='$userID'");
+    //$result = mysqli_query($db, "SELECT id FROM people WHERE userid='$userid'");
     //pg:
-    $result = pg_query($db, "SELECT id FROM people WHERE userID='$userID'");
+    $result = pg_query($db, "SELECT id FROM people WHERE userid='$userid'");
 
 
     //mysql:
@@ -143,7 +143,7 @@
           ");
     }
     // если такого нет, то сохраняем данные
-    $query = "INSERT INTO people (userID, email, name, password) VALUES('{$userID}', '{$email}', '{$name}','{$password}')";
+    $query = "INSERT INTO people (userid, email, name, password) VALUES('{$userid}', '{$email}', '{$name}','{$password}')";
 
     //mysql:
     //$result2 = mysqli_query ($db, $query);
@@ -174,9 +174,9 @@
           <form  action='../crop/user_photo.php' method='post'>
 
            <p>    
-             <input name='userID' type='text' size='30' maxlength='30' value= {$userID} hidden >
+             <input name='userid' type='text' size='30' maxlength='30' value= {$userid} hidden >
            </p>
-           <!--**** В спрятанном поле отправляем сообщение что userID определен ***** --> 
+           <!--**** В спрятанном поле отправляем сообщение что userid определен ***** --> 
 
            <p>
              <input type='submit' name='photo_upload' class='btn btn-default  knot-content-btn' value='photo upload'>

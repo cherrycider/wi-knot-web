@@ -16,6 +16,7 @@ header("Pragma: no-cache");
     // если имя не установлено, редирект на страницу авторизации 
     //($_POST['userID'] проходит сразу после регистрации со страницы user_save.php)
 
+    // TODO uncomment!:
     //if ((!isset($_SESSION['userID'])) and (!isset($_POST['userID']))){header("Location: ../user/user_login.php");}
 
 

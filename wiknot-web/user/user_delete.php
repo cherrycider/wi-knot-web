@@ -19,12 +19,12 @@
     // файл db_connection.php должен быть в той же папке, что и все остальные, 
     //если это не так, то просто измените путь 
 
-    if (isset($_SESSION['userID'])) {$userID = $_SESSION['userID'];}
+    if (isset($_SESSION['userid'])) {$userid = $_SESSION['userid'];}
 	
 	// на случай если удаляем не под своим аккаунтом - можем прислать ID пользователя в $_POST
-    if (isset($_POST['userID'])) {$userID = $_POST['userID']; $_SESSION['userID']= $_POST['userID']; }
+    if (isset($_POST['userid'])) {$userid = $_POST['userid']; $_SESSION['userid']= $_POST['userid']; }
 
-    $query = "SELECT * FROM people WHERE userID='$userID'";
+    $query = "SELECT * FROM people WHERE userid='$userid'";
   
     //mysql:
     //$result = mysqli_query($db, $query);
@@ -44,7 +44,7 @@
 
     //используем значения для отображения на сайте, например  в тегах php -  echo $myrow['name'] 
 	
-     $userID = $myrow['userID'];
+     $userid = $myrow['userid'];
      $email = $myrow['email'];
      $name = $myrow['name'];
      
@@ -170,7 +170,7 @@
 		if ($password==$myrow['password'])	{
 			
 			   // удаляем пользователя
-			   $query = "DELETE FROM people WHERE userID='$userID'";
+			   $query = "DELETE FROM people WHERE userid='$userid'";
 
 
 		    //mysql:
@@ -189,7 +189,7 @@
 			   
 			   
                    //обнуляем сессию !
-                    unset($_SESSION['userID']);
+                    unset($_SESSION['userid']);
                     unset($_SESSION['email']);
                     unset($_SESSION['name']);	
                     unset($_SESSION['photo']);

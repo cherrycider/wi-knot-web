@@ -166,7 +166,7 @@
     //если существует, то сверяем пароли
     if ($myrow['password']==$password) {
     //если пароли совпадают, то запускаем пользователю сессию! Можете его поздравить, он вошел!
-    $_SESSION['userID']=$myrow['userID'];
+    $_SESSION['userid']=$myrow['userid'];
     $_SESSION['email']=$myrow['email'];
     $_SESSION['name']=$myrow['name'];	
     $_SESSION['photo']=$myrow['photo'];
@@ -202,7 +202,7 @@
 			</div>
           <div>
           <br><br>
-		  your userID = {$_SESSION['userID']}<br>
+		  your userid = {$_SESSION['userid']}<br>
 		  your email = {$_SESSION['email']} <br>
 		  your name = {$_SESSION['name']}<br>
 		  your photo = {$_SESSION['photo']}<br>

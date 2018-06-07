@@ -92,7 +92,7 @@
 <?php
 
     //обнуляем сессию !
-    unset($_SESSION['userID']);
+    unset($_SESSION['userid']);
     unset($_SESSION['email']);
     unset($_SESSION['name']);	
     unset($_SESSION['photo']);
